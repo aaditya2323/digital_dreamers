@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Home | Digital Dreamers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Digital Dreamers</div>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#carousel">Gallery</a></li>
+            <li><a href="{{ url_for('submit') }}">Submit Details</a></li>
+            <li><a href="{{ url_for('admin_login') }}">Admin Login</a></li>
+        </ul>
+        <div class="auth-buttons">
+        <a href="{{ url_for('user_login') }}" class="btn-login">Login</a>
+        <a href="{{ url_for('signup') }}" class="btn-signup">Sign Up</a>
+    </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" style="background-color: #e0f2f1; padding: 4rem 2rem; text-align: center;">
+        <h1 style="color: #00796b; font-size: 3rem;">Welcome to Digital Dreamers</h1>
+        <p style="color: #333; font-size: 1.2rem; margin-top: 1rem;">Empowering innovation through creativity and dedication.</p>
+    </section>
+
+    <!-- About Us Section -->
+    <!-- About Us Section -->
+<section id="about">
+    <div class="about-container">
+        <h1>About Us</h1>
+        <p>
+            We are a passionate team driven by innovation and committed to excellence.
+            With a focus on creativity and impact, we aim to build meaningful solutions that make a difference.
+        </p>
+
+        <div class="founder-ceo">
+            <div class="ceo-image-wrapper">
+                <img src="{{ url_for('static', filename='img/ceo.jpg') }}" alt="Founder & CEO" class="ceo-image"/>
+            </div>
+            <div class="ceo-details">
+                <h2>Aaditya Subedi<br><small>Founder & CEO</small></h2>
+                <p>
+                    Mr Subedi leads our vision with deep passion, creativity, and dedication to creating innovative solutions that connect people and ideas.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Events Section -->
+<section id="events">
+    <h1>Upcoming Events</h1>
+    <div class="event-cards">
+
+        <div class="event-card">
+            <img src="{{ url_for('static', filename='img/event1.jpg') }}" alt="Event 1" class="event-image"/>
+            <div class="event-content">
+                <h3>Tech Conference 2025</h3>
+                <p>Join us to explore the future of technology with experts and innovators.</p>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <img src="{{ url_for('static', filename='img/event2.jpg') }}" alt="Event 2" class="event-image"/>
+            <div class="event-content">
+                <h3>Workshop: Design Thinking</h3>
+                <p>A hands-on session to dive deep into creative problem-solving.</p>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <img src="{{ url_for('static', filename='img/event3.jpg') }}" alt="Event 3" class="event-image"/>
+            <div class="event-content">
+                <h3>Hackathon 2025</h3>
+                <p>Collaborate, innovate, and compete to create breakthrough tech solutions in 48 hours.</p>
+            </div>
+        </div>
+           <div class="event-card">
+            <img src="{{ url_for('static', filename='img/event3.jpg') }}" alt="Event 3" class="event-image"/>
+            <div class="event-content">
+                <h3>Hackathon 2025</h3>
+                <p>Collaborate, innovate, and compete to create breakthrough tech solutions in 48 hours.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+    <!-- Carousel Section -->
+    <section id="carousel">
+        <h1>Our Journey</h1>
+        <div class="carousel-container">
+            <div class="carousel-wrapper" id="carouselWrapper">
+                <div class="carousel-slide">
+                    <img src="{{ url_for('static', filename='img/event1.jpg') }}" class="carousel-image" alt="Slide 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="{{ url_for('static', filename='img/event2.jpg') }}" class="carousel-image" alt="Slide 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="{{ url_for('static', filename='img/event3.jpg') }}" class="carousel-image" alt="Slide 3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+   <footer>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Digital Dreamers Logo" class="logo-img" />
+            <span>Digital Dreamers</span>
+        </div>
+        <ul class="footer-links">
+            <li><a href="{{ url_for('privacy') }}">Privacy</a></li>
+            <li><a href="{{ url_for('terms') }}">Terms</a></li>
+            <li><a href="{{ url_for('help') }}">Help</a></li>
+        </ul>
+        <div class="social-icons">
+            <a href="https://facebook.com/digitaldreamers" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <img src="{{ url_for('static', filename='facebook-icon.svg') }}" alt="Facebook" />
+            </a>
+            <a href="https://twitter.com/digitaldreamers" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                <img src="{{ url_for('static', filename='twitter-icon.svg') }}" alt="Twitter" />
+            </a>
+            <a href="https://instagram.com/digitaldreamers" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <img src="{{ url_for('static', filename='instagram-icon.svg') }}" alt="Instagram" />
+            </a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2025 Digital Dreamers. All rights reserved.
+    </div>
+</footer>
+
+
+    <!-- Carousel JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+  const carouselWrapper = document.getElementById('carouselWrapper');
+  const slides = carouselWrapper.children;
+  const slideWidthPercent = 100; // 1 slide visible, so 100%
+  const totalSlides = slides.length;
+  const visibleSlides = 1;
+  let currentIndex = 0;
+
+  setInterval(() => {
+    currentIndex++;
+    if (currentIndex > totalSlides - visibleSlides) {
+      currentIndex = 0;
+    }
+    carouselWrapper.style.transform = `translateX(-${currentIndex * slideWidthPercent}%)`;
+  }, 3000);
+});
+
+ </script>
+    
+
+</body>
+</html>

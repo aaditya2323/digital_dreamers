@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin Login - Digital Dreamers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+    <nav>
+        <div class="logo">Digital Dreamers</div>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('submit') }}">Submit Details</a></li>
+            <li><a href="{{ url_for('login') }}">Admin Login</a></li>
+        </ul>
+    </nav>
+
+    <section id="login-form">
+        <h1>Admin Login</h1>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <ul class="flash-messages">
+              {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+
+        <form action="{{ url_for('login') }}" method="POST">
+            <label for="username">Username:</label><br />
+            <input type="text" id="username" name="username" required /><br />
+
+            <label for="password">Password:</label><br />
+            <input type="password" id="password" name="password" required /><br />
+
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <footer>
+        &copy; 2025 Digital Dreamers. All rights reserved.
+    </footer>
+</body>
+</html>
+
